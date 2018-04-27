@@ -11,9 +11,9 @@ def client_connect():
     tcp_client_socket.connect(server_addr)
     print "please in put the file name"
     filename = raw_input()
-    sleep(5)
     f = open(filename, "rb")
     tcp_client_socket.send(filename)
+    sleep(5)    
     data = f.read(bufsiz)
     while data:
         tcp_client_socket.send(data)
